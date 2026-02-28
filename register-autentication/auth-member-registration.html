@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscrição Institucional | Registro</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body class="bg-slate-50 font-sans text-slate-900">
+    <div class="min-h-screen flex items-center justify-center p-6">
+        <div class="w-full max-w-[480px]">
+            <div class="bg-white rounded-[2.5rem] shadow-2xl shadow-slate-200/60 p-8 md:p-12 border border-slate-100">
+                <div class="flex flex-col items-center mb-10">
+                    <h1 class="text-2xl font-bold tracking-tight text-slate-800">Nova Inscrição</h1>
+                    <p class="text-slate-500 text-sm text-center">Preencha os dados para criar seu perfil de membro</p>
+                </div>
+
+                <form id="register-form" class="space-y-5" novalidate>
+                    <div class="space-y-1.5">
+
+                        <div class="relative group">
+                            <i
+                                class="fa-solid fa-user absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-emerald-500 transition-colors"></i>
+                            <input type="text" id="inputName" name="name"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-3.5 pl-12 pr-4 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all placeholder:text-slate-300 shadow-sm"
+                                placeholder="Como deseja ser chamado?">
+                        </div>
+                        <div class="space-y-4 items-center justify-center">
+                            <button type="submit"
+                                class="w-64 mx-auto block bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 rounded-2xl transition-all duration-300 shadow-md hover:shadow-lg active:scale-95 m-4">
+                                Enviar
+                            </button>
+
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/just-validate@4.3.0/dist/just-validate.production.min.js"></script>
+
+    <script src="../js/register-validation.js"></script>
+
+</body>
+
+</html>
