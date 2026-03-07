@@ -16,7 +16,7 @@ O projeto foi construído utilizando as melhores práticas de desenvolvimento fr
 
 ---
 
-# 🎨 Funcionalidades
+# ✅ Funcionalidades
 
 ### 🔐 Autenticação
 * **Registro de Usuário**: Formulário completo com nome, e-mail e senha.
