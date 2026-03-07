@@ -58,14 +58,6 @@ validation.addField('#inputConfirmPassword', [
   },
 ]);
 
-// Telefone (opcional, mas validado se preenchido)
-validation.addField('#inputPhone', [
-  {
-    rule: 'customRegexp',
-    value: /^[0-9()\-\s]+$/,
-    errorMessage: 'Digite um telefone válido',
-  },
-]);
 
 // Sucesso
 validation.onSuccess((event) => {
@@ -73,6 +65,42 @@ validation.onSuccess((event) => {
 
   console.log('Formulário válido ✔');
 
-  // Aqui você pode enviar via fetch
   event.target.submit();
+});
+
+
+// =========================
+// OLHO DA SENHA
+// =========================
+
+document.addEventListener("DOMContentLoaded", function () {
+
+  // senha
+  const togglePassword = document.querySelector('#togglePassword');
+  const password = document.querySelector('#inputPassword');
+
+  if (togglePassword && password) {
+    togglePassword.addEventListener('click', () => {
+      const type = password.type === 'password' ? 'text' : 'password';
+      password.type = type;
+
+      togglePassword.classList.toggle('fa-eye');
+      togglePassword.classList.toggle('fa-eye-slash');
+    });
+  }
+
+  // confirmar senha
+  const toggleConfirmPassword = document.querySelector('#toggleConfirmPassword');
+  const confirmPassword = document.querySelector('#inputConfirmPassword');
+
+  if (toggleConfirmPassword && confirmPassword) {
+    toggleConfirmPassword.addEventListener('click', () => {
+      const type = confirmPassword.type === 'password' ? 'text' : 'password';
+      confirmPassword.type = type;
+
+      toggleConfirmPassword.classList.toggle('fa-eye');
+      toggleConfirmPassword.classList.toggle('fa-eye-slash');
+    });
+  }
+
 });
