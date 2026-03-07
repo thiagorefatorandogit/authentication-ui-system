@@ -5,10 +5,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Inscrição Institucional | Login</title>
-
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 </head>
 
 <body class="bg-slate-50 font-sans text-slate-900">
@@ -16,80 +14,63 @@
   <main class="min-h-screen flex items-center justify-center px-6 py-10">
 
     <section class="w-full max-w-md">
+      <div class="bg-white rounded-[2rem] shadow-2xl shadow-slate-200/50 p-10 border border-slate-100">
 
-      <div
-        class="bg-white rounded-[2.5rem] shadow-2xl shadow-slate-200/60 p-8 md:p-12 border border-slate-100">
-
-        <!-- Header -->
-        <header class="text-center mb-10">
-          <h1 class="text-2xl font-bold tracking-tight text-slate-800">
-            Acessar Conta
+        <header class="mb-10 text-center">
+          <h1 class="text-4xl font-black text-slate-800 tracking-tight uppercase">
+            Login
           </h1>
-          <p class="text-slate-500 text-sm mt-2">
-            Entre com seus dados para continuar
-          </p>
+          <div class="h-1 w-12 bg-emerald-500 mx-auto mt-2 rounded-full"></div>
         </header>
 
-        <!-- Form -->
-        <form id="login-form" class="space-y-4" novalidate>
+        <form id="login-form" class="space-y-5" novalidate>
 
-          <!-- Email -->
-          <div class="space-y-1">
-            <div class="relative group">
-              <i
-                class="fa-solid fa-envelope absolute left-4 inset-y-0 flex items-center text-slate-400 group-focus-within:text-emerald-500 transition-colors">
-              </i>
-              <input type="email" id="loginEmail" name="email"
-                class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-3.5 pl-12 pr-4 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white placeholder:text-slate-300"
-                placeholder="Seu e-mail cadastrado" />
+          <div class="flex flex-col gap-1.5">
+            <label for="loginEmail" class="text-xs font-bold text-slate-500 uppercase tracking-wider ml-1">
+              E-mail
+            </label>
+            <input type="email" id="loginEmail" name="email" placeholder="exemplo@email.com"
+              class="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 text-slate-800 transition-all focus:bg-white focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 outline-none placeholder:text-slate-300" />
+            <div id="email-error" class="text-[11px] text-red-500 font-semibold px-1 mt-0.5">
             </div>
-            <div id="email-error" class="text-sm text-red-500 min-h-[20px]"></div>
           </div>
 
-          <!-- Senha -->
-          <div class="space-y-1">
-            <div class="relative group">
-              <i
-                class="fa-solid fa-lock absolute left-4 inset-y-0 flex items-center text-slate-400 group-focus-within:text-emerald-500 transition-colors">
-              </i>
-              <input type="password" id="loginPassword" name="password"
-                class="w-full bg-slate-50 border border-slate-200 rounded-2xl py-3.5 pl-12 pr-4 shadow-sm transition-all focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white placeholder:text-slate-300"
-                placeholder="Sua senha" />
+          <div class="flex flex-col gap-1.5">
+            <div class="flex justify-between items-center px-1">
+              <label for="loginPassword" class="text-xs font-bold text-slate-500 uppercase tracking-wider">
+                Senha
+              </label>
             </div>
-            <div id="password-error" class="text-sm text-red-500 min-h-[20px]"></div>
-          </div>
+            <input type="password" id="loginPassword" name="password" placeholder="••••••••"
+              class="w-full px-5 py-4 rounded-2xl bg-slate-50 border border-slate-200 text-slate-800 transition-all focus:bg-white focus:ring-4 focus:ring-emerald-500/10 focus:border-emerald-500 outline-none placeholder:text-slate-300" />
 
-          <!-- Esqueci senha -->
-          <div class="text-right text-sm">
-            <a href="#"
-              class="text-emerald-600 hover:text-emerald-700 transition-colors">
-              Esqueci minha senha
+            <a href="#" class="text-xs text-right font-bold text-emerald-600 hover:text-emerald-700 transition-colors">
+              Esqueceu a senha?
             </a>
+
+            <div id="password-error" class="text-[11px] text-red-500 font-semibold px-1 mt-0.1">
+            </div>
           </div>
 
-          <!-- Botão -->
           <button type="submit"
-            class="w-full bg-emerald-500 hover:bg-emerald-600 text-white font-semibold py-3 rounded-2xl shadow-md transition-all duration-300 hover:shadow-lg active:scale-95">
-            Entrar
+            class="w-full py-4 bg-slate-900 hover:bg-slate-800 text-white font-bold rounded-2xl shadow-xl transition-all active:scale-[0.97] mt-2">
+            Acessar
           </button>
 
-          <!-- Link Registro -->
-          <p class="text-center text-sm text-slate-500 pt-2">
-            Ainda não possui conta?
-          <a href="../register-autentication/auth-member-registration.html"
-          class="text-emerald-600 hover:text-emerald-700 font-semibold transition-colors">
-            Criar conta
-           </a>
+          <p class="text-center text-sm text-slate-400 font-medium pt-4">
+            Não tem conta?
+            <a href="../register-autentication/auth-member-registration.html"
+              class="text-emerald-600 font-bold hover:underline">Cadastre-se</a>
           </p>
-
         </form>
-
       </div>
-
     </section>
 
   </main>
-<script src="
+
+  <script src="https://cdn.jsdelivr.net/npm/just-validate@4.3.0/dist/just-validate.production.min.js"></script>
+  <script src="../js/login-validation.js"></script>
+
 </body>
 
 </html>
