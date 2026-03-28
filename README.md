@@ -87,15 +87,38 @@ Feedback Visual:
 
 - Implementação: A lógica alterna o atributo type do input entre password e text via JavaScript, garantindo que a funcionalidade seja acessível e intuitiva.
 
-# Como usar  
+## 🛠️ Como Usar e Testar
+
+Siga os passos abaixo para clonar o projeto, configurar as dependências e validar as funcionalidades através dos testes automatizados.
+
+### 1. Clonagem e Configuração
+Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
 
 ```bash
-  # Clone o repositório
-  git clone https://github.com/thiagorefatorandogit/authentication-ui-system
-  cd authentication-ui-system
+# Clone o repositório
+git clone [https://github.com/thiagorefatorandogit/authentication-ui-system](https://github.com/thiagorefatorandogit/authentication-ui-system)
 
-  # Instale as dependências de desenvolvimento (Cypress)
-   npm install
+# Acesse a pasta do projeto
+cd authentication-ui-system
+
+# Instale as dependências de desenvolvimento (Cypress)
+npm install
+```
+
+### 2. Execução dos Testes (Cypress) 🧪
+Você pode rodar os testes de duas formas, dependendo da sua necessidade:
+
+### 🖥️ Modo Terminal (Headless)
+Ideal para uma verificação rápida e direta no console:
+```bash
+npx cypress run --spec "cypress/login.cy.js"
+npx cypress run --spec "cypress/registro.cy.js"
+```
+
+### 🌐 Modo Interface Visual (Interativo)
+Ideal para acompanhar o navegador executando as ações em tempo real:
+```bash
+npx cypress open
 ```
 
 ## Inicialização
