@@ -1,0 +1,15 @@
+{
+  "name": "authentication-ui-system",
+  "version": "1.0.0",
+  "description": "Este projeto consiste em um portal de autenticação moderno e responsivo, focado na experiência do usuário (UX). Ele inclui interfaces de **Registro de Membros** e **Portal de Login**, com validações de formulário em tempo real e design minimalista utilizando Tailwind CSS.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^15.13.0"
+  }
+}

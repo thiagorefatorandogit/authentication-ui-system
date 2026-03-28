@@ -6,101 +6,44 @@ const validation = new JustValidate('#register-form', {
   },
 });
 
-// Nome
-validation.addField('#inputName', [
-  {
-    rule: 'required',
-    errorMessage: 'O nome é obrigatório',
-  },
-  {
-    rule: 'minLength',
-    value: 3,
-    errorMessage: 'O nome deve ter no mínimo 3 caracteres',
-  },
-]);
+// Configuração dos campos com destino do erro (errorsContainer)
+validation
+  .addField('#inputName', [
+    { rule: 'required', errorMessage: 'O nome é obrigatório' },
+    { rule: 'minLength', value: 3, errorMessage: 'Mínimo de 3 caracteres' },
+  ], { errorsContainer: '#name-error' })
 
-// Email
-validation.addField('#inputEmail', [
-  {
-    rule: 'required',
-    errorMessage: 'O e-mail é obrigatório',
-  },
-  {
-    rule: 'email',
-    errorMessage: 'Digite um e-mail válido',
-  },
-]);
+  .addField('#inputEmail', [
+    { rule: 'required', errorMessage: 'O e-mail é obrigatório' },
+    { rule: 'email', errorMessage: 'Digite um e-mail válido' },
+  ], { errorsContainer: '#email-error' })
 
-// Senha
-validation.addField('#inputPassword', [
-  {
-    rule: 'required',
-    errorMessage: 'A senha é obrigatória',
-  },
-  {
-    rule: 'minLength',
-    value: 6,
-    errorMessage: 'A senha deve ter no mínimo 6 caracteres',
-  },
-]);
-
-// Confirmar senha
-validation.addField('#inputConfirmPassword', [
-  {
-    rule: 'required',
-    errorMessage: 'Confirme sua senha',
-  },
-  {
-    validator: (value, fields) => {
-      return value === fields['#inputPassword'].elem.value;
+  .addField('#inputPassword', [
+    { rule: 'required', errorMessage: 'A senha é obrigatória' },
+    { rule: 'minLength', value: 6, errorMessage: 'Mínimo de 6 caracteres' },
+  ], { errorsContainer: '#password-error' })
+  
+  .addField('#inputConfirmPassword', [
+    { rule: 'required', errorMessage: 'Confirme sua senha' },
+    {
+      validator: (value, fields) => value === fields['#inputPassword'].elem.value,
+      errorMessage: 'As senhas não coincidem',
     },
-    errorMessage: 'As senhas não coincidem',
-  },
-]);
+  ], { errorsContainer: '#confirm-password-error' });
 
-
-// Sucesso
-validation.onSuccess((event) => {
-  event.preventDefault();
-
-  console.log('Formulário válido ✔');
-
-  event.target.submit();
-});
-
-
-// =========================
-// OLHO DA SENHA
-// =========================
-
-document.addEventListener("DOMContentLoaded", function () {
-
-  // senha
-  const togglePassword = document.querySelector('#togglePassword');
-  const password = document.querySelector('#inputPassword');
-
-  if (togglePassword && password) {
-    togglePassword.addEventListener('click', () => {
-      const type = password.type === 'password' ? 'text' : 'password';
-      password.type = type;
-
-      togglePassword.classList.toggle('fa-eye');
-      togglePassword.classList.toggle('fa-eye-slash');
-    });
-  }
-
-  // confirmar senha
-  const toggleConfirmPassword = document.querySelector('#toggleConfirmPassword');
-  const confirmPassword = document.querySelector('#inputConfirmPassword');
-
-  if (toggleConfirmPassword && confirmPassword) {
-    toggleConfirmPassword.addEventListener('click', () => {
-      const type = confirmPassword.type === 'password' ? 'text' : 'password';
-      confirmPassword.type = type;
-
-      toggleConfirmPassword.classList.toggle('fa-eye');
-      toggleConfirmPassword.classList.toggle('fa-eye-slash');
-    });
-  }
-
+// Lógica do eye (Senha e Confirmar)
+document.addEventListener("DOMContentLoaded", () => {
+  const setupToggle = (toggleId, inputId) => {
+    const toggle = document.querySelector(toggleId);
+    const input = document.querySelector(inputId);
+    if (toggle && input) {
+      toggle.addEventListener('click', () => {
+        input.type = input.type === 'password' ? 'text' : 'password';
+        toggle.classList.toggle('fa-eye');
+        toggle.classList.toggle('fa-eye-slash');
+      });
+    }
+  };
+  setupToggle('#togglePassword', '#inputPassword');
+  setupToggle('#toggleConfirmPassword', '#inputConfirmPassword');
 });
