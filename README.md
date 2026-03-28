@@ -40,13 +40,17 @@ O projeto conta com uma suíte de testes automatizados via **Cypress**, cobrindo
 
 ```plaintext
 authentication-ui-system/
+├── cypress/
+    └── login.cy.js
+    └── registro.cy,js
+├── js/
+    └── login-validation.js
+    └── register.validation.js
 ├── login-autentication/
 │   └── member-login-portal.html      # Interface de Login
+├── node_modules/
 ├── register-autentication/
 │   └── auth-member-registration.html # Interface de Cadastro
-├── js/
-│   ├── login-validation.js           # Configurações do JustValidate (Login)
-│   └── register-validation.js        # Configurações do JustValidate (Registro)
 └── README.md                         # Documentação do projeto
 
 ```
