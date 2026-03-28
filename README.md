@@ -146,7 +146,7 @@ Abra uma nova aba ou janela do seu terminal para disparar os comandos de teste:
 npx cypress open
 ```
 
-## Inicialização
+## Inicialização estática
 - Execução: Como o projeto utiliza caminhos relativos e bibliotecas via CDN, basta abrir o arquivo index.html em seu navegador.
 - Dica: Utilize a extensão Live Server no VS Code para visualizar as transições e animações em tempo real.
 
