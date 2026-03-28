@@ -105,6 +105,15 @@ cd authentication-ui-system
 npm install
 ```
 
+2. Inicialização do Servidor (Localhost) 🌐
+Para que o Cypress acesse as páginas estáticas, você deve subir o servidor na porta 5000:
+
+```bash
+npx serve . -l 5000
+```
+
+O projeto estará disponível em: http://localhost:5000.
+
 ### 2. Execução dos Testes (Cypress) 🧪
 Você pode rodar os testes de duas formas, dependendo da sua necessidade:
 
@@ -117,6 +126,22 @@ npx cypress run --spec "cypress/registro.cy.js"
 
 ### 🌐 Modo Interface Visual (Interativo)
 Ideal para acompanhar o navegador executando as ações em tempo real:
+```bash
+npx cypress open
+```
+
+### 🛠️ Fluxo Prático
+Para que os testes automatizados do Cypress funcionem, é necessário manter dois terminais abertos simultaneamente: um para sustentar a aplicação no ar (servidor) e outro para gerenciar a execução dos testes.
+
+- Passo 1: Terminal do Servidor (Aplicação)
+Neste terminal, você deixará o projeto "rodando" localmente. Use o comando abaixo para fixar a porta 5000, garantindo que o Cypress encontre as páginas:
+```bash
+npx serve . -l 5000
+```
+Nota: Mantenha este terminal sempre aberto durante o desenvolvimento. Se ele for fechado, o Cypress retornará um erro de conexão (AggregateError).
+
+- Passo 2: Terminal de Testes (Cypress)
+Abra uma nova aba ou janela do seu terminal para disparar os comandos de teste:
 ```bash
 npx cypress open
 ```
