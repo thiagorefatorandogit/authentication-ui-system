@@ -96,7 +96,7 @@ Certifique-se de ter o [Node.js](https://nodejs.org/) instalado em sua máquina.
 
 ```bash
 # Clone o repositório
-git clone [https://github.com/thiagorefatorandogit/authentication-ui-system](https://github.com/thiagorefatorandogit/authentication-ui-system)
+git clone https://github.com/thiagorefatorandogit/authentication-ui-system.git
 
 # Acesse a pasta do projeto
 cd authentication-ui-system
