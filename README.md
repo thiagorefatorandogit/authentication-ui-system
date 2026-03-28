@@ -30,6 +30,12 @@ O projeto foi construído utilizando as melhores práticas de desenvolvimento fr
 * Comparação entre "Senha" e "Confirmar Senha" no cadastro.
 * Feedback visual de erro estilizado abaixo de cada input.
 
+### 🧪 Qualidade & Testes (QA)
+O projeto conta com uma suíte de testes automatizados via **Cypress**, cobrindo os cenários:
+* Validação de formato de e-mail inválido.
+* Verificação de requisitos mínimos de segurança para senhas.
+* Sucesso na autenticação com perfis homologados (ex: Patolino).
+
 ### 📂 Estrutura das pastas
 
 ```plaintext
@@ -83,6 +89,9 @@ Feedback Visual:
   # Clone o repositório
   git clone https://github.com/thiagorefatorandogit/authentication-ui-system
   cd authentication-ui-system
+
+  # Instale as dependências de desenvolvimento (Cypress)
+   npm install
 ```
 
 ## Inicialização
